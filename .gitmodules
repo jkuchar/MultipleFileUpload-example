@@ -1,0 +1,6 @@
+[submodule "www/MultipleFileUpload"]
+	path = www/MultipleFileUpload
+	url = https://github.com/jkuchar/MultipleFileUpload.git
+[submodule "libs/MultipleFileUpload"]
+	path = libs/MultipleFileUpload
+	url = https://github.com/jkuchar/MultipleFileUpload.git
