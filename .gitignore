@@ -1,3 +1,5 @@
 /nbproject/
 /log/*
 /temp/*
+/libs/*
+/composer.lock

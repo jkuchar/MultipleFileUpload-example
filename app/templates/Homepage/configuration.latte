@@ -1,0 +1,106 @@
+@{block #content}
+
+<a n:href="default">Back to example</a>
+
+<h2>Configuration</h2>
+<table cellpadding="5" cellspacing="2" border="2" class="server">
+	<tr>
+		<th>
+			Safe mode
+		</th>
+		<td>
+			{if ini_get("safe_mode")}
+				ano
+			{else}
+				ne
+			{/if}
+		</td>
+	</tr>
+
+	<tr>
+		<th>
+			open_basedir
+		</th>
+		<td>
+			{if $data = ini_get("open_basedir")}
+				{$data}
+			{else}
+				<i>bez omezení</i>
+			{/if}
+		</td>
+	</tr>
+
+	<tr>
+		<th>
+			Maximální velikost POST požadavku
+		</th>
+		<td>
+			{= ini_get("post_max_size")}
+		</td>
+	</tr>
+
+	<tr>
+		<th>
+			Maximální velikost odesílaných souborů
+		</th>
+		<td>
+			{= ini_get("upload_max_filesize")}
+		</td>
+	</tr>
+
+	<tr>
+		<th>
+			{=\Nette\Framework::NAME} {=\Nette\Framework::VERSION}{* ({=Framework::PACKAGE}) *}
+		</th>
+		<td>
+			{=\Nette\Framework::REVISION}
+		</td>
+	</tr>
+
+	<tr>
+		<th>
+			Environment name
+		</th>
+		<td>
+			TODO
+		</td>
+	</tr>
+
+	<tr>
+		<th>
+			{=\MultipleFileUpload\MultipleFileUpload::NAME} version
+		</th>
+		<td>
+			{=\MultipleFileUpload\MultipleFileUpload::VERSION}
+		</td>
+	</tr>
+
+	<tr>
+		<th>
+			Multiple File Upload: queues model
+		</th>
+		<td>
+			{=\MultipleFileUpload\MultipleFileUpload::getQueuesModel()->reflection->name}
+		</td>
+	</tr>
+
+	<tr>
+		<th>
+			Multiple File Upload: interfaces
+		</th>
+		<td>
+			{foreach \MultipleFileUpload\MultipleFileUpload::getUIRegistrator()->getInterfaces() AS $interface}
+				{$interface->reflection->name}{if !$iterator->isLast()},{/if}
+			{/foreach}
+		</td>
+	</tr>
+
+	<tr>
+		<th>
+			Příklad: Bude ukládat odeslané soubory?
+		</th>
+		<td>
+			{if \Nette\Environment::isProduction()}ne{else}ano{/if}
+		</td>
+	</tr>
+</table>

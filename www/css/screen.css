@@ -44,3 +44,61 @@ form .error {
 	color: #D00;
 	font-weight: bold;
 }
+
+
+
+
+
+
+/* My extension */
+
+body {
+	margin: 0px;
+	padding: 0px;
+
+	font-family: 'Strait', sans-serif;
+}
+
+div.header {
+	background-color: gray;
+	padding: 1.5em 3em 1em 3em;
+}
+
+.header, .header h1, .header .prex, .header a {
+	color: #e4e4e4;
+}
+
+.header h1 {
+	font-size: 2em;
+	margin-bottom: 0px;
+}
+
+.selfcheckFailed {
+	color: orange;
+}
+
+.header p.prex {
+	margin-top: 0px;
+	margin-bottom: 2em;
+
+	font-size: 1em;
+}
+
+.header p.description {
+}
+
+.example, .content {
+	margin: 1em 3em 3em 3em;
+}
+
+.selfcheckFailed.alertBox {
+	padding: 1em;
+	margin: 2em 2em 2em 2em;
+	font-size: 1.4em;
+	text-align: center;
+	display: block;
+	border: 3px solid orange;
+	background-color: orange;
+	border-radius: 0.3em;
+	color: #626262;
+}

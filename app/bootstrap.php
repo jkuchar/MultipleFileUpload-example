@@ -27,64 +27,61 @@ $container = $configurator->createContainer();
 // TODO: Move to separate file?
 // <MultipleFileUploadControl>
 
-	// Step 4.1: Setup MultipleFileUpload
-	MultipleFileUpload::register();
+// Setup MultipleFileUpload
+MultipleFileUpload\MultipleFileUpload::register();
 
-	// Optional step: register custom user interfaces
-	// Registrator accepts instance of class or class name
-	// As defaults is used this:
-	// 
-	//MultipleFileUpload::getUIRegistrator()
-	//	->clear()
-	//	->register("MFUUIHTML4SingleUpload")
-	//	->register("MFUUIPlupload");
-	//
+// Optional step: register custom user interfaces
+// Registrator accepts instance of class or class name
+// As defaults is used this:
 
-	// If you want to use swfupload instead of uploadify use this setup code
-	// Vyki is autor of swfupload extension: http://forum.nette.org/cs/profile.php?id=2221
-	//MultipleFileUpload::getUIRegistrator()
-	//	->clear()
-	//	->register("MFUUIHTML4SingleUpload")
-	//	->register("MFUUISwfupload");
-
-	// Or you can you uploadify
-	//MultipleFileUpload::getUIRegistrator()
-	//	->clear()
-	//	->register("MFUUIHTML4SingleUpload")
-	//	->register("MFUUIUploadify");
-
-
-
-
-	// Optional step: register driver
-	//
-	// As default driver is used Sqlite driver
-	// @see http://addons.nettephp.com/cs/multiplefileupload#toc-drivery
-	//
-	// When you want to use other driver use something like this:
-	//
-	//if(class_exists("Dibi",true)) {
-	//
-	//	Dibi::connect(array(
-	//		"driver"   => "postgre",
-	//		"host"     => "127.0.0.1",
-	//		"dbname"   => "mfu",
-	//		"schema"   => "public",
-	//		"user"     => "postgres",
-	//		"pass"     => "toor",
-	//		"charset"  => "UTF-8"
-	//	));
-	//
-	//	MultipleFileUpload::setQueuesModel(new MFUQueuesDibi());
-	//}
+//MultipleFileUpload\MultipleFileUpload::getUIRegistrator()
+//	->clear()
+//	->register('MultipleFileUpload\UI\HTML4SingleUpload')
+//	->register('MultipleFileUpload\UI\Plupload');
+//
+//
+//// If you want to use swfupload instead of uploadify use this setup code
+//// Vyki is autor of swfupload extension: http://forum.nette.org/cs/profile.php?id=2221
+//MultipleFileUpload\MultipleFileUpload::getUIRegistrator()
+//	->clear()
+//	->register('MultipleFileUpload\UI\HTML4SingleUpload')
+//	->register('MultipleFileUpload\UI\Swfupload');
+//
+//// Or you can you uploadify
+//MultipleFileUpload\MultipleFileUpload::getUIRegistrator()
+//	->clear()
+//	->register('MultipleFileUpload\UI\HTML4SingleUpload')
+//	->register('MultipleFileUpload\UI\Uploadify');
 
 
 
-	// Custom file validation function:
-	//function validateMFUFile(HttpUploadedFile $file) {
-	//	return $file->isOk();
-	//}
-	//MultipleFileUpload::$validateFileCallback = callback("validateMFUFile");
+
+//// Optional step: register driver
+////
+//// As default driver is used Sqlite driver
+//// @see http://addons.nettephp.com/cs/multiplefileupload#toc-drivery
+////
+//// When you want to use other driver use something like this:
+//
+//dibi::connect(array(
+//	"driver"   => "postgre",
+//	"host"     => "127.0.0.1",
+//	"dbname"   => "mfu",
+//	"schema"   => "public",
+//	"user"     => "postgres",
+//	"pass"     => "toor",
+//	"charset"  => "UTF-8"
+//));
+//MultipleFileUpload\MultipleFileUpload::setQueuesModel(new MultipleFileUpload\Model\Dibi\Queues());
+
+
+
+//// Custom file validation function:
+//// (this is used if none is specified)
+//function validateMFUFile(\Nette\Http\FileUpload $file) {
+//	return $file->isOk();
+//}
+//MultipleFileUpload::$validateFileCallback = callback('\validateMFUFile');
 
 // </MultipleFileUploadControl>
 
