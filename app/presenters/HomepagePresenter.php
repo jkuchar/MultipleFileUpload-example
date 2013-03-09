@@ -28,6 +28,10 @@ class HomepagePresenter extends BasePresenter {
 			$messages[] = "Directory \"www/MultipleFileUpload\" not found! Copy or link content of \"libs/jkuchar/MultipleFileUpload/public\" folder to \"www/MultipleFileUpload\".";
 		};
 		
+		if(!file_exists($publicMFUDir."MFUFallbackController.js")) {
+			$messages[] = "File MFUFallbackController.js is missing! Is should be in www/MultipleFileUpload. MFU can't work without this file.";
+		};
+		
 		if(!file_exists($jsDir)) {
 			$messages[] = "WARNING: Directory \"www/js\" not found! (trying to check, if jQuery is properly installed)";
 		}
