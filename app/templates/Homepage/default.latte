@@ -42,23 +42,23 @@
 	</p>
 	{snippet form}
 		{ifset $values}
-			<h2>Data vrácená formulářem</h2>
-			{? $fields = array("upload","upload2"); }
+			<h2>Recieved data</h2>
+			{? $fields = array("upload"); }
 			{foreach $fields AS $field}
-			<b>{=count($values[$field])}</b> přijatých souborů pomocí odesílacího políčka <b>{$field}</b>.
+			<b>{=count($values[$field])}</b> recieved files through <b>{$field}</b> field.
 			<table>
 				<tr>
 					<th>
-						Název souboru
+						File name
 					</th>
 					<th>
-						Velikost souboru
+						File size
 					</th>
 					<th>
 						Mime-type
 					</th>
 					<th>
-						Cesta k souboru
+						Path
 					</th>
 				</tr>
 				{foreach $values[$field] AS $file}
@@ -80,8 +80,8 @@
 				{/foreach}
 			</table>
 			{/foreach}
-			<form class="ajax" action="{link prekresliForm!}" style="padding-top: 10px;">
-				<input type="submit" name="tlacitko" value="Zpět na formulář">
+			<form class="ajax" action="{link redrawForm!}" style="padding-top: 10px;">
+				<input type="submit" name="tlacitko" value="Back to form">
 			</form>
 		{else}
 			{widget form}

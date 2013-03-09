@@ -63,17 +63,17 @@ class HomepagePresenter extends BasePresenter {
 			->addRule(Form::FILLED, "Textové políčko test musí být vyplněno!");*/
 
 		// Uploadů můžete do formuláře samozdřejmě přidat více, ale zatím je docela nepříjemná validace a jedna chybka v JS
-		$form->addMultipleFileUpload("upload","První balíček souborů");
+		$form->addMultipleFileUpload("upload","Attachments");
 			//->addRule("MultipleFileUpload::validateFilled","Musíte odeslat alespoň jeden soubor!")
 			//->addRule("MultipleFileUpload::validateFileSize","Soubory jsou dohromady moc veliké!",100*1024);
-		$form->addMultipleFileUpload("upload2","Druhý balíček souborů");
+		//$form->addMultipleFileUpload("upload2","Druhý balíček souborů");
 
 		$form->addSubmit("odeslat", "Odeslat");
 		$form->onSuccess[] = array($this,"zpracujFormular");
 		
 		// Invalidace snippetů
-		$form->onError[] = array($this,"handlePrekresliForm");
-		$form->onSuccess[] = array($this,"handlePrekresliForm");
+		$form->onError[] = array($this,"handleRedrawForm");
+		$form->onSuccess[] = array($this,"handleRedrawForm");
 	}
 
 	public function zpracujFormular(\Nette\Application\UI\Form $form) {
@@ -99,7 +99,7 @@ class HomepagePresenter extends BasePresenter {
 		}
 	}
 
-	public function handlePrekresliForm() {
+	public function handleRedrawForm() {
 		$this->invalidateControl("form");
 	}
 
