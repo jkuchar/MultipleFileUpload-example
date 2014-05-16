@@ -15,17 +15,17 @@ common:
 		application:
 			errorPresenter: Error
 
-		database:
-			dsn: 'mysql:host=localhost;dbname=test'
-			user:
-			password:
+#		database:
+#			dsn: 'mysql:host=localhost;dbname=test'
+#			user:
+#			password:
 
 		session:
 			expiration: 14 days
 
 
 	services:
-		authenticator: Authenticator
+#		authenticator: Authenticator
 		routerFactory: RouterFactory
 		router: @routerFactory::createRouter
 
