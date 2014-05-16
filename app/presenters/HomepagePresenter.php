@@ -19,7 +19,8 @@ class HomepagePresenter extends BasePresenter {
 	 * Returns array of suggestions
 	 */
 	public function checkConfiguration() {
-		$www = $this->context->params["wwwDir"];
+		
+		$www = $this->context->expand("%wwwDir%");
 		$publicMFUDir = $www . "/MultipleFileUpload/";
 		$jsDir        = $www . "/js/";
 		$messages = array();
