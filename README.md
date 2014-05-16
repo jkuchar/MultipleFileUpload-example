@@ -1,5 +1,7 @@
-Example application with MultipleFileUpload
-===========================================
+The example application of MultipleFileUpload
+=============================================
+
+This is example of [MultipleFileUpload](https://github.com/jkuchar/MultipleFileUpload) [Nette Framework](https://github.com/nette/nette) addon.
 
 Installation
 ------------
