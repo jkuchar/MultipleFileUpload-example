@@ -43,16 +43,12 @@ class HomepagePresenter extends BasePresenter {
 			$messages[] = "WARNING: File jquery.js not found! MultipleFileUpload does not work corectly without jQuery.";
 		}
 		
-		if(!file_exists($jsDir."jquery.livequery.js")) {
-			$messages[] = "WARNING: File jquery.livequery.js not found! MFUFallbackController requires livequery.";
-		}
-		
-		if(!file_exists($jsDir."jquery.nette.js")) {
-			$messages[] = "WARNING: File jquery.nette.js not found! This is needed if you want to use AJAX.";
+		if(!file_exists($jsDir."nette.ajax.js")) {
+			$messages[] = "WARNING: File nette.ajax.js not found! This is needed if you want to use AJAX. (http://addons.nette.org/vojtech-dobes/nette-ajax-js)";
 		}
 		
 		if(!file_exists($jsDir."netteForms.js")) {
-			$messages[] = "WARNING: File netteForms.js not found! This is needed if you want to use AJAX.";
+			$messages[] = "WARNING: File netteForms.js not found! This is needed if you want validation of forms.";
 		}
 		
 		return $messages;
@@ -60,9 +56,9 @@ class HomepagePresenter extends BasePresenter {
 	
 	public function createComponentForm($name) {
 		$form = new Form($this, $name);
-		$form->getElementPrototype()->class[] = "ajax";
+		$form->getElementPrototype()->class[] = "ajax"; // activate AJAX in http://addons.nette.org/vojtech-dobes/nette-ajax-js
 
-		$form->addText("textField0","Text field")
+		$form->addText("textField","Text field")
 			->addRule(Form::FILLED, "This is required text field.");
 
 		$form->addMultipleFileUpload("upload","Attachments");
