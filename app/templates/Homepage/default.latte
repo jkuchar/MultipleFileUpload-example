@@ -11,7 +11,7 @@
 
 	<h2>Documentation</h2>
 	<p>
-		Documentation is on <a href="http://addons.nette.org/en/multiplefileupload" target="_BLANK">Nette Addon portal</a>.
+		Documentation is on <a href="http://addons.nette.org/jkuchar/multiplefileupload" target="_blank">Nette Addon portal</a>.
 	</p>
 	
 	<h2>Sources</h2>
@@ -37,9 +37,6 @@
 	{include #flashes}
 
 	<h2>Live example</h2>
-	<p>
-		<a n:href="configuration">Information about server configuration</a>.
-	</p>
 	{snippet form}
 		{ifset $values}
 			<h2>Recieved data</h2>
@@ -87,5 +84,9 @@
 			{control form}
 		{/ifset}
 	{/snippet}
+	
+	<p>
+		Take a look into <a n:href="configuration">server configuration</a>.
+	</p>
 
 </div>
