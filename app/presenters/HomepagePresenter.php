@@ -66,7 +66,7 @@ class HomepagePresenter extends BasePresenter {
 			//->addRule("MultipleFileUpload::validateFileSize","Files together are too large.",100*1024);
 		//$form->addMultipleFileUpload("upload2","Second file uploader");
 
-		$form->addSubmit("send", "Submit yor form!");
+		$form->addSubmit("send", "Submit your form!");
 		$form->onSuccess[] = $this->handleFormSuccess;
 		
 		// Invalidace snippetů
