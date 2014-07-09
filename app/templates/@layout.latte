@@ -30,7 +30,7 @@
 	<script type="text/JavaScript" src="{$baseUri}/js/main.js"></script>
 	
         <script type="text/JavaScript" src="{$baseUri}/MultipleFileUpload/MFUFallbackController.js"></script>
-	{!=MultipleFileUpload\MultipleFileUpload::getHead()}
+	{=MultipleFileUpload\MultipleFileUpload::getHead()|noescape}
 	
 	
 	{block head}{/block}
