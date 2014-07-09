@@ -63,7 +63,7 @@ class HomepagePresenter extends BasePresenter {
 
 		$form->addMultipleFileUpload("upload","Attachments");
 			//->addRule('MultipleFileUpload\MultipleFileUpload::validateFilled',"You have to upload at least one file!")
-			//->addRule('MultipleFileUpload\MultipleFileUpload::validateFileSize',"Files together are too large.",100*1024);
+			//->addRule('MultipleFileUpload\MultipleFileUpload::validateFileSize',"Files are together too large.",100*1024);
 		//$form->addMultipleFileUpload("upload2","Second file uploader");
 
 		$form->addSubmit("send", "Submit your form!");
