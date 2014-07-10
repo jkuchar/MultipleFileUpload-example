@@ -19,7 +19,7 @@
 	"require": {
 		"php": ">= 5.3.0",
 		"nette/nette": "~2.2.0",
-		"jkuchar/multiplefileupload": "dev-master"
+		"jkuchar/multiplefileupload": "~1.1.0"
 	},
 	"require-dev": {
 		"nette/tester": "@dev"
