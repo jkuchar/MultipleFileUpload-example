@@ -35,8 +35,13 @@ MultipleFileUpload\MultipleFileUpload::register();
 // As defaults is used this:
 
 //MultipleFileUpload\MultipleFileUpload::getUIRegistrator()
-//	->clear()
+//	->clear() // removed default registered interfaces
+//	
 //	->register('MultipleFileUpload\UI\HTML4SingleUpload')
+//	
+//	and select one of these:
+//	->register('MultipleFileUpload\UI\Uploadify');
+//	->register('MultipleFileUpload\UI\SwfUpload');
 //	->register('MultipleFileUpload\UI\Plupload');
 //
 //
